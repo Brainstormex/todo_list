@@ -15,7 +15,6 @@ const CustomForm = ({addTask}) => {
 
   return (
     <form className="todo" onSubmit={handleSubmit}>
-      <p>{task}</p>
       <div className="wrapper">
         <input
           type="text"
