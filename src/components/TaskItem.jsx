@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./TaskItem.module.css";
 
-function TaskItem({ task }) {
+function TaskItem({ task, deleteTask }) {
   const [isChecked, setIsChecked] = useState(task.checked);
 
   const handleCheckboxChange = (e) => {
@@ -63,7 +63,7 @@ function TaskItem({ task }) {
         <button
           className={`btn ${styles.delete}`}
           aria-label={`Delete ${task.name} Task`}
-          //onclick={}
+          onClick={()=>deleteTask(task.id)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
