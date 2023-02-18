@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./TaskItem.module.css";
 
-function TaskItem({ task, deleteTask, toggleTask }) {
+function TaskItem({ task, deleteTask, toggleTask, enterEditMode }) {
   const [isChecked, setIsChecked] = useState(task.checked);
 
   const handleCheckboxChange = (e) => {
@@ -44,7 +44,7 @@ function TaskItem({ task, deleteTask, toggleTask }) {
         <button
           className="btn"
           aria-label={`Update ${task.name} Task`}
-          //onclick={}
+          onClick={()=>enterEditMode(task)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
